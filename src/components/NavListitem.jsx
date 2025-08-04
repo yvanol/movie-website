@@ -1,5 +1,4 @@
 import React from "react";
-import "./navListitem.css";
 
 function NavListItem({ nav }) {
   return (

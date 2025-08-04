@@ -1,0 +1,21 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.filter li {
+  color: #ffffff;
+  padding: 10px 25px;
+  background: #191919;
+  transition: 0.3s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.filter li:hover,
+.filter li.active {
+  background: var(--primary);
+  color: white;
+}

@@ -2,6 +2,7 @@ import NavListitem from "../components/NavListitem";
 import Search from "../components/Search";
 import navListData from "../data/navListData"
 import './header.css'
+import '../components/navListitem.css'
 import Button from "../components/Button";
 
 function Header() {
