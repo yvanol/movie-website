@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./banner.css";
 import MovieContent from "../../components/MovieContent/MovieContent";
-import MovieDate from "../../components/MovieData/MovieDate";
+import MovieDate from "../../components/MovieDate/MovieDate";
 import PlayBtn from "../../components/PlayBtn/PlayBtn";
 import MovieSwiper from "../../components/MovieSwiper/MovieSwiper";
 
