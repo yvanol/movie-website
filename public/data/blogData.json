@@ -8,7 +8,7 @@
       "name": "Maria Doe",
       "image": "../assets/blogs/blog-author-1.jpg"
     },
-    "date": "Jan 1, 2023"
+    "date": "Jan 1, 2025"
   },
   {
     "_id": 2,
@@ -19,7 +19,7 @@
       "name": "Allisa Mayer",
       "image": "../assets/blogs/blog-author-2.jpg"
     },
-    "date": "May 10, 2023"
+    "date": "May 10, 2025"
   },
   {
     "_id": 3,
@@ -30,7 +30,7 @@
       "name": "Mark Dower",
       "image": "../assets/blogs/blog-author-3.jpg"
     },
-    "date": "June 23, 2023"
+    "date": "June 23, 2025"
   },
   {
     "_id": 4,
@@ -41,6 +41,6 @@
       "name": "Lisa Neymar",
       "image": "../assets/blogs/blog-author-4.jpg"
     },
-    "date": "July 23, 2023"
+    "date": "July 23, 2025"
   }
 ]

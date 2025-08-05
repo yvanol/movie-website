@@ -1,9 +1,9 @@
 import React, { useState, useEffect, use } from "react";
 import "./schedule.css";
-import "../components/filterListItem.css";
-import Card from "../components/Card";
-import filterListData from "../data/filterListData";
-import FilterListItem from "../components/FilterListItem";
+import "../../components/FilterListItem/filterListItem.css";
+import Card from "../../components/Card/Card";
+import filterListData from "../../data/filterListData";
+import FilterListItem from "../../components/FilterListItem/FilterListItem";
 
 function Schedule() {
   const [data, setData] = useState([]);

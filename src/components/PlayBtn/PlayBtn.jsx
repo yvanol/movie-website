@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./playBtn.css";
-import Modal from "./Modal";
+import Modal from "../Modal/Modal";
 
 function PlayBtn({ movie }) {
   const [modal, setModal] = useState(false);

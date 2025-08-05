@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from "react";
 import "./banner.css";
-import bgImg from "../images/bg-transformer.jpg";
-import MovieContent from "../components/MovieContent";
-import MovieDate from "../components/MovieDate";
-import PlayBtn from "../components/PlayBtn";
-import MovieSwiper from "../components/MovieSwiper";
+import MovieContent from "../../components/MovieContent/MovieContent";
+import MovieDate from "../../components/MovieData/MovieDate";
+import PlayBtn from "../../components/PlayBtn/PlayBtn";
+import MovieSwiper from "../../components/MovieSwiper/MovieSwiper";
 
 function Banner() {
   const [movies, setMovies] = useState([]);

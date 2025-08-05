@@ -1,7 +1,7 @@
 import React from "react";
-import "./movieContent.css";
-import titleImg from "../images/transformer-title.png";
-import Button from "./Button";
+import "././movieContent.css";
+import titleImg from "../../images/transformer-title.png";
+import Button from "../Button/Button";
 
 function MovieContent({ movie }) {
   return (
