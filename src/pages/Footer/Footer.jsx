@@ -92,7 +92,7 @@ function Footer() {
           .All Rights Reserved
         </div>
         <div className="credits">
-          Designed by <a href="#">DStudio Technology</a>
+          Designed by <a href="#">RYG Technology</a>
         </div>
       </div>
     </footer>
