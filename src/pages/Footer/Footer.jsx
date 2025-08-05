@@ -87,7 +87,7 @@ function Footer() {
         <div className="copyright">
           copyright{" "}
           <strong>
-            <span>DStudio Technology</span>
+            <span>RYG Technology</span>
           </strong>
           .All Rights Reserved
         </div>
