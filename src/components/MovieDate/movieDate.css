@@ -1,0 +1,59 @@
+.banner .date {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s;
+  z-index: 1000;
+  margin: 0 auto; /* Center horizontally */
+  display: block; /* Ensure proper centering */
+  max-width: clamp(200px, 50vw, 400px); /* Constrain width */
+}
+
+.banner .date.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.banner .date h2 {
+  font-family: 'Racing Sans One', cursive;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 4cqi; /* Original font size preserved */
+  text-align: center;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem); /* Responsive margin */
+  text-shadow: 0 0 1.25rem rgba(255, 255, 255, 0.8);
+  -webkit-mask: linear-gradient(#000000 0 0), linear-gradient(#000000 0 0);
+  -webkit-mask-clip: text, padding-box;
+  -webkit-mask-composite: xor;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .banner .date {
+    max-width: clamp(300px, 40vw, 500px);
+  }
+}
+
+/* Media query for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .banner .date {
+    margin: 0 auto;
+    max-width: clamp(150px, 60vw, 300px);
+  }
+  .banner .date h2 {
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 480px) {
+  .banner .date {
+    margin: 0 auto;
+    max-width: clamp(120px, 70vw, 200px);
+  }
+  .banner .date h2 {
+    margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+  }
+}

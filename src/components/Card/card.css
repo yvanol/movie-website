@@ -1,0 +1,221 @@
+/* Original Styles */
+.section .movie-card {
+  border: none;
+  position: relative;
+  border-radius: 0;
+  background: #000000 !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+
+section .movie-card::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  transform: scale(0);
+}
+
+section .movie-card p {
+  color: #dddddd;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 0;
+}
+
+section .movie-card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  transform: scale(0);
+}
+
+section .movie-card .content h4 {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+section .movie-card .content h4::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -10px;
+  height: 5px;
+  width: 80%;
+  background: linear-gradient(
+    90deg,
+    var(--primary, #e50914),
+    var(--primary, #e50914),
+    transparent
+  );
+  z-index: 1000;
+}
+
+section .movie-card .content ion-icon {
+  font-size: 2.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+section .movie-card .content ion-icon:hover {
+  color: var(--primary, #e50914);
+}
+
+section .movie-card:hover .content,
+section .movie-card:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Responsive Adjustments */
+.section .movie-card {
+    width: 100%; /* Fill Bootstrap column */
+    max-width: clamp(160px, 20vw, 240px); /* Match trend.css */
+    height: auto;
+    aspect-ratio: 2 / 3; /* Consistent proportions */
+    overflow: hidden;
+}
+
+.section .movie-card .img-fluid {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+section .movie-card p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: clamp(6px, 1.5vw, 8px) 0;
+}
+
+section .movie-card .content h4 {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: clamp(10px, 2vw, 15px);
+}
+
+section .movie-card .content h4::before {
+    bottom: clamp(-8px, -1.5vw, -6px);
+    height: clamp(3px, 0.5vw, 4px);
+    width: clamp(60%, 10vw, 70%);
+}
+
+section .movie-card .content ion-icon {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+section .row.section {
+    gap: clamp(10px, 2vw, 15px); /* Space between cards */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .section .movie-card {
+        max-width: clamp(140px, 18vw, 200px);
+    }
+
+    section .movie-card p {
+        font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+        padding: clamp(5px, 1.3vw, 7px) 0;
+    }
+
+    section .movie-card .content h4 {
+        font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+        margin-bottom: clamp(8px, 1.8vw, 12px);
+    }
+
+    section .movie-card .content h4::before {
+        bottom: clamp(-7px, -1.3vw, -5px);
+        height: clamp(2.5px, 0.4vw, 3.5px);
+        width: clamp(55%, 9vw, 65%);
+    }
+
+    section .movie-card .content ion-icon {
+        font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+    }
+
+    section .row.section {
+        gap: clamp(8px, 1.8vw, 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    .section .movie-card {
+        max-width: clamp(120px, 16vw, 180px);
+    }
+
+    section .movie-card p {
+        font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+        padding: clamp(4px, 1.2vw, 6px) 0;
+    }
+
+    section .movie-card .content h4 {
+        font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+        margin-bottom: clamp(6px, 1.6vw, 10px);
+    }
+
+    section .movie-card .content h4::before {
+        bottom: clamp(-6px, -1.2vw, -5px);
+        height: clamp(2px, 0.3vw, 3px);
+        width: clamp(50%, 8vw, 60%);
+    }
+
+    section .movie-card .content ion-icon {
+        font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    }
+
+    section .row.section {
+        gap: clamp(6px, 1.5vw, 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .section .movie-card {
+        max-width: clamp(100px, 14vw, 160px);
+    }
+
+    section .movie-card p {
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        padding: clamp(3px, 1vw, 5px) 0;
+    }
+
+    section .movie-card .content h4 {
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        margin-bottom: clamp(5px, 1.4vw, 8px);
+    }
+
+    section .movie-card .content h4::before {
+        bottom: clamp(-5px, -1vw, -4px);
+        height: clamp(1.5px, 0.2vw, 2.5px);
+        width: clamp(45%, 7vw, 55%);
+    }
+
+    section .movie-card .content ion-icon {
+        font-size: clamp(1.2rem, 2.3vw, 1.4rem);
+    }
+
+    section .row.section {
+        gap: clamp(5px, 1.2vw, 8px);
+    }
+}

@@ -1,0 +1,52 @@
+.button {
+  display: flex;
+  gap: 0.5rem; /* Changed to rem for better scaling */
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.mainBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* Changed to rem */
+  margin-right: 0.75rem; /* Adjusted for smaller screens */
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem; /* Adjusted padding */
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  transition: 0.3s;
+  cursor: pointer !important;
+  border: none;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.mainBtn:hover {
+  color: var(--primary) !important;
+  background: #ffffff !important;
+  cursor: pointer !important;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .button {
+    justify-content: center; /* Center buttons on small screens */
+  }
+  .mainBtn {
+    margin-right: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+}
+
+/* Media query for very small screens */
+@media screen and (max-width: 480px) {
+  .mainBtn {
+    padding: 0.15rem 0.4rem;
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+  }
+}

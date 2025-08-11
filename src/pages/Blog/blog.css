@@ -1,0 +1,18 @@
+.blogs{
+    text-align: center;
+    margin-top: 1.5%;
+}
+
+.blogs .section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: clamp(-20px, -3vw, -15px);
+    height: clamp(3px, 0.5vw, 4px);
+    width: clamp(30%, 10vw, 40%);
+    background: linear-gradient(90deg, var(--primary, #e50914), var(--primary, #e50914), transparent);
+    z-index: 1000;
+}
+
+

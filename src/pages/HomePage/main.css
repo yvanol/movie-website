@@ -1,0 +1,220 @@
+/* Original Styles */
+main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 0 120px;
+    background: #000000;
+}
+
+main::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -80px;
+    width: 100%;
+    height: 200px;
+    background: #000000;
+    filter: blur(50px);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 140px 20px;
+    width: 100%;
+    transition: ease-in-out 1s;
+    transform-origin: bottom;
+    z-index: 1100;
+}
+
+section h1 {
+    font-weight: 400;
+    font-size: 4em;
+    letter-spacing: 1px;
+    margin-bottom: 150px;
+    text-align: center;
+    color: #ffffff;
+}
+
+section .section-title {
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+section .section-title::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -30px;
+    height: 5px;
+    width: 50%;
+    background: linear-gradient(
+        90deg,
+        var(--primary, #e50914),
+        var(--primary, #e50914),
+        transparent
+    );
+    z-index: 1000;
+}
+
+section p {
+    font-weight: 300;
+    color: #111111;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* Responsive Adjustments */
+main {
+    padding: 0 0 clamp(60px, 10vw, 100px); /* Scale bottom padding */
+    min-height: calc(100vh - clamp(40px, 5vw, 60px)); /* Adjust for smaller screens */
+}
+
+main::before {
+    top: clamp(-60px, -5vw, -40px); /* Scale offset */
+    height: clamp(100px, 15vw, 150px); /* Scale height */
+    filter: blur(clamp(20px, 5vw, 40px)); /* Reduce blur for performance */
+}
+
+section {
+    padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 120px) clamp(10px, 2vw, 15px); /* Responsive padding */
+}
+
+section h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem); /* Scale font size */
+    margin-bottom: clamp(50px, 10vw, 100px); /* Scale margin */
+}
+
+section .section-title {
+    font-size: clamp(1.2rem, 3vw, 1.6rem); /* Scale font size */
+    margin-bottom: clamp(20px, 4vw, 25px); /* Scale margin */
+}
+
+section .section-title::after {
+    bottom: clamp(-20px, -3vw, -15px); /* Scale position */
+    height: clamp(3px, 0.5vw, 4px); /* Scale height */
+    width: clamp(30%, 10vw, 40%); /* Scale width */
+}
+
+section p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Scale font size */
+    margin-bottom: clamp(20px, 5vw, 30px); /* Scale margin */
+    color: #ffffff; /* Improved contrast for dark background */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    main {
+        padding-bottom: clamp(50px, 8vw, 80px);
+    }
+
+    main::before {
+        top: clamp(-50px, -4vw, -30px);
+        height: clamp(80px, 12vw, 120px);
+        filter: blur(clamp(15px, 4vw, 30px));
+    }
+
+    section {
+        padding: clamp(50px, 8vw, 80px) clamp(15px, 4vw, 80px) clamp(8px, 1.5vw, 12px);
+    }
+
+    section h1 {
+        font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+        margin-bottom: clamp(40px, 8vw, 80px);
+    }
+
+    section .section-title {
+        font-size: clamp(1.1rem, 2.8vw, 1.4rem);
+        margin-bottom: clamp(15px, 3.5vw, 20px);
+    }
+
+    section .section-title::after {
+        bottom: clamp(-15px, -2.5vw, -12px);
+        height: clamp(2.5px, 0.4vw, 3.5px);
+        width: clamp(25%, 8vw, 35%);
+    }
+
+    section p {
+        font-size: clamp(0.85rem, 2.3vw, 0.95rem);
+        margin-bottom: clamp(15px, 4vw, 25px);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-bottom: clamp(40px, 7vw, 60px);
+    }
+
+    main::before {
+        top: clamp(-40px, -3.5vw, -25px);
+        height: clamp(60px, 10vw, 100px);
+        filter: blur(clamp(10px, 3vw, 20px));
+    }
+
+    section {
+        padding: clamp(40px, 7vw, 60px) clamp(10px, 3vw, 40px) clamp(6px, 1.2vw, 10px);
+    }
+
+    section h1 {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        margin-bottom: clamp(30px, 7vw, 60px);
+    }
+
+    section .section-title {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        margin-bottom: clamp(12px, 3vw, 18px);
+    }
+
+    section .section-title::after {
+        bottom: clamp(-12px, -2vw, -10px);
+        height: clamp(2px, 0.3vw, 3px);
+        width: clamp(20%, 7vw, 30%);
+    }
+
+    section p {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+        margin-bottom: clamp(12px, 3.5vw, 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-bottom: clamp(30px, 6vw, 50px);
+    }
+
+    main::before {
+        top: clamp(-30px, -3vw, -20px);
+        height: clamp(50px, 8vw, 80px);
+        filter: blur(clamp(8px, 2.5vw, 15px));
+    }
+
+    section {
+        padding: clamp(30px, 6vw, 50px) clamp(8px, 2.5vw, 20px) clamp(5px, 1vw, 8px);
+    }
+
+    section h1 {
+        font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+        margin-bottom: clamp(20px, 6vw, 40px);
+    }
+
+    section .section-title {
+        font-size: clamp(0.9rem, 2.3vw, 1.2rem);
+        margin-bottom: clamp(10px, 2.5vw, 15px);
+    }
+
+    section .section-title::after {
+        bottom: clamp(-10px, -1.8vw, -8px);
+        height: clamp(1.5px, 0.2vw, 2.5px);
+        width: clamp(15%, 6vw, 25%);
+    }
+
+    section p {
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+        margin-bottom: clamp(10px, 3vw, 15px);
+    }
+}

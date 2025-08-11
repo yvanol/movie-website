@@ -1,0 +1,103 @@
+.banner .content {
+  position: relative;
+  max-width: clamp(300px, 45vw, 500px); /* Responsive max-width */
+  margin: 0 auto; /* Center horizontally */
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s;
+  z-index: 1000;
+}
+
+.banner .content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.movie-title {
+  max-width: clamp(150px, 20vw, 200px); /* Responsive image width */
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center image */
+}
+
+.banner .content h4 {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* Responsive font size */
+  text-align: center; /* Center text */
+}
+
+.banner .content h4 span {
+  padding: 0 clamp(0.3rem, 1vw, 0.5rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.banner .content h4 span:first-child {
+  padding-left: 0;
+}
+
+.banner .content h4 span:last-child {
+  border-right: 0;
+}
+
+.banner .content h4 span i {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0 clamp(0.3rem, 1vw, 0.4rem);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.banner .content p {
+  font-size: clamp(0.875rem, 2vw, 1rem); /* Responsive font size */
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: clamp(0.75rem, 2vw, 1rem) 0 clamp(1rem, 2.5vw, 1.5rem);
+  text-align:justify ;/* Center text */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .banner .content {
+    max-width: clamp(400px, 40vw, 600px);
+  }
+  .movie-title {
+    max-width: clamp(200px, 25vw, 250px);
+  }
+}
+
+/* Media query for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .banner .content {
+    max-width: clamp(250px, 80vw, 400px);
+  }
+  .movie-title {
+    max-width: clamp(120px, 30vw, 150px);
+  }
+  .banner .content h4 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  .banner .content p {
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  }
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 480px) {
+  .banner .content {
+    max-width: clamp(200px, 90vw, 300px);
+  }
+  .movie-title {
+    max-width: clamp(100px, 25vw, 120px);
+  }
+  .banner .content h4 {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  .banner .content p {
+    font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+  }
+}

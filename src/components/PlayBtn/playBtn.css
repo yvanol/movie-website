@@ -1,0 +1,125 @@
+.banner .trailer {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  z-index: 1000;
+  display: flex; /* Inline layout for text and button */
+  flex-direction: row; /* Align text and button horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.banner .trailer.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.trailer p {
+  color: var(--primary);
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive font size */
+  margin-left: clamp(0.3rem, 1vw, 0.5rem); /* Space between text and button */
+  text-align: left; /* Align text naturally */
+}
+
+.banner .playBtn {
+  position: relative;
+  color: #ffffff;
+  width: clamp(60px, 10vw, 70px); /* Responsive width */
+  height: clamp(60px, 10vw, 70px); /* Responsive height */
+  transition: 1s;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer !important;
+}
+
+.banner .playBtn ion-icon {
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive icon size */
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.banner .playBtn::before {
+  position: absolute;
+  top: -0.25rem;
+  left: -0.25rem;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  content: '';
+  background: transparent;
+  border: clamp(5px, 1vw, 8px) solid #ffffff; /* Responsive border */
+  border-radius: 50%;
+  animation: button 1s linear infinite;
+}
+
+@keyframes button {
+  0%,
+  100% {
+    opacity: 0.3;
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(10px);
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .banner .trailer {
+    justify-content: center;
+  }
+  .trailer p {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin-left: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+  .banner .playBtn {
+    width: clamp(70px, 8vw, 80px);
+    height: clamp(70px, 8vw, 80px);
+  }
+  .banner .playBtn ion-icon {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+}
+
+/* Media query for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .trailer p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    margin-left: clamp(0.2rem, 0.8vw, 0.4rem);
+  }
+  .banner .playBtn {
+    width: clamp(50px, 8vw, 60px);
+    height: clamp(50px, 8vw, 60px);
+  }
+  .banner .playBtn ion-icon {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  .banner .playBtn::before {
+    border: clamp(4px, 0.8vw, 6px) solid #ffffff;
+  }
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 480px) {
+  .trailer p {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    margin-left: clamp(0.15rem, 0.6vw, 0.3rem);
+  }
+  .banner .playBtn {
+    width: clamp(40px, 7vw, 50px);
+    height: clamp(40px, 7vw, 50px);
+  }
+  .banner .playBtn ion-icon {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+  .banner .playBtn::before {
+    border: clamp(3px, 0.6vw, 5px) solid #ffffff;
+  }
+}

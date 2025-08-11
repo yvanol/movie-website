@@ -1,0 +1,67 @@
+header, header * {
+  pointer-events: auto !important;
+  z-index: 10000 !important;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 5vw, 5rem); /* Responsive padding */
+  transition: 0.5s;
+  z-index: 1000;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+header.scrolled {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid var(--primary);
+  border-image: linear-gradient(90deg, transparent, var(--primary), transparent) 30;
+  backdrop-filter: blur(20px);
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 5vw, 5rem);
+}
+
+.logo {
+  font-family: 'Racing Sans One', cursive;
+  font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+/* Media query for tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  header {
+    padding: clamp(0.75rem, 2.5vw, 1rem) clamp(0.5rem, 3vw, 2rem);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav {
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+  .logo {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  }
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 480px) {
+  header {
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
+  }
+  .logo {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+}
